@@ -1,3 +1,13 @@
 <template>
-  <h3>NINGHAO</h3>
+  <h3>{{ name }}</h3>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      name: 'NINGHAO',
+    };
+  },
+};
+</script>
