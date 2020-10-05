@@ -17,6 +17,12 @@ export default {
     },
   },
 
+  watch: {
+    name(newName, oldName) {
+      console.log(`name 发生了变化：${oldName} -> ${newName}`);
+    },
+  },
+
   created() {
     console.log('App 组件已创建！');
 
