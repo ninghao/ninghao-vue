@@ -1,6 +1,8 @@
 <template>
   <h3>{{ name }}</h3>
   {{ processStatus }}
+  <button v-on:click="resetName">重置</button>
+  <button @click="setName">设置</button>
 </template>
 
 <script>
@@ -35,6 +37,16 @@ export default {
         this.name = '宁皓网';
       }, 3000);
     },
+
+    resetName() {
+      this.name = 'NINGHAO';
+    },
   },
 };
 </script>
+
+<style>
+button {
+  margin: 4px;
+}
+</style>
