@@ -1,6 +1,17 @@
 <template>
-  <button class="button">按钮</button>
+  <button class="button">{{ text }}</button>
 </template>
+
+<script>
+export default {
+  props: {
+    text: {
+      type: String,
+      default: '按钮',
+    },
+  },
+};
+</script>
 
 <style scoped>
 .button {
