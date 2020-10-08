@@ -1,6 +1,6 @@
 <template>
   <h3>{{ name }}</h3>
-  <input type="text" v-model.lazy="content" />
+  <input type="text" v-model.number="content" @change="onChangeContent" />
   <span>→ Content: {{ content }}</span>
 </template>
 
@@ -9,11 +9,19 @@ export default {
   data() {
     return {
       name: '宁皓网',
-      content: '天地玄黄',
+      content: 0,
     };
   },
 
-  methods: {},
+  created() {
+    console.log('content 数据的类型（组件创建时）：', typeof this.content);
+  },
+
+  methods: {
+    onChangeContent() {
+      console.log('content 数据的类型（元素值变化后）：', typeof this.content);
+    },
+  },
 };
 </script>
 
