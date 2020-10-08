@@ -1,7 +1,7 @@
 <template>
   <h3>{{ name }}</h3>
-  <textarea v-model="content" placeholder="写点东西"></textarea>
-  <span>→ Content: {{ content }}</span>
+  <input id="checked" type="checkbox" v-model="checked" />
+  <label for="checked">→ Checked: {{ checked }}</label>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       name: '宁皓网',
-      content: '',
+      checked: true,
     };
   },
 };
