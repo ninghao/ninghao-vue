@@ -2,7 +2,7 @@
   <button class="button">按钮</button>
 </template>
 
-<style>
+<style scoped>
 .button {
   outline: none;
   border: none;
