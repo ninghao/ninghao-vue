@@ -7,6 +7,9 @@
         <router-link class="menu-item" :to="{ name: 'about' }"
           >关于</router-link
         >
+        <router-link class="menu-item" :to="{ name: 'postIndex' }"
+          >内容</router-link
+        >
       </div>
     </div>
     <div class="page-body">
