@@ -12,6 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/about',
+    name: 'about',
     component: About,
   },
 ];
