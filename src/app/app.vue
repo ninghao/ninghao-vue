@@ -1,5 +1,6 @@
 <template>
   <h3>{{ name }}</h3>
+  <router-view></router-view>
 </template>
 
 <script>
