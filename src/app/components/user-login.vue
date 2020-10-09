@@ -13,6 +13,34 @@ export default {
     };
   },
 
+  beforeCreate() {
+    console.log('user login before create');
+  },
+
+  created() {
+    console.log('user login created');
+  },
+
+  beforeMount() {
+    console.log('user login before mount');
+  },
+
+  mounted() {
+    console.log('user login mounted');
+  },
+
+  beforeUpdate() {
+    console.log('user login before update');
+  },
+
+  updated() {
+    console.log('user login updated');
+  },
+
+  unmounted() {
+    console.log('user login unmounted');
+  },
+
   components: { AppInput },
 };
 </script>
