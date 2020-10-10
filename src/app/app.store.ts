@@ -13,6 +13,12 @@ const store = createStore({
       return `🎈 ${state.name}`;
     },
   },
+
+  mutations: {
+    setName(state, data) {
+      state.name = data;
+    },
+  },
 });
 
 export default store;
