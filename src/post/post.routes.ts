@@ -11,11 +11,15 @@ const routes: Array<RouteRecordRaw> = [
     path: '/posts',
     name: 'postIndex',
     component: PostIndex,
+    props: {
+      sort: 'popular',
+    },
   },
   {
     path: '/posts/:postId',
     name: 'postShow',
     component: PostShow,
+    props: true,
     children: [
       {
         path: 'meta',
