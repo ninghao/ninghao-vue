@@ -1,5 +1,6 @@
 <template>
   <div>PostShow {{ $route.params.postId }}</div>
+  <router-view></router-view>
 </template>
 
 <script>
