@@ -6,8 +6,16 @@ export interface UserState {
 }
 
 const store: Module<UserState, RootState> = {
+  namespaced: true,
+
   state: {
     currentUser: '',
+  },
+
+  getters: {
+    currentUser(state) {
+      return state.currentUser;
+    },
   },
 
   mutations: {
