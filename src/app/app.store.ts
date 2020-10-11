@@ -1,4 +1,11 @@
 import { createStore } from 'vuex';
+import user, { UserState } from '@/user/user.store';
+
+export interface RootState {
+  name: string;
+  loading: boolean;
+  user?: UserState;
+}
 
 /**
  * 创建 Store
@@ -26,7 +33,9 @@ const store = createStore({
   },
 
   actions: {
-    getName({ commit }) {
+    getName({ commit, rootState }) {
+      console.log(rootState);
+
       commit('setLoading', true);
 
       setTimeout(() => {
@@ -35,6 +44,10 @@ const store = createStore({
         commit('setLoading', false);
       }, 2000);
     },
+  },
+
+  modules: {
+    user,
   },
 });
 
