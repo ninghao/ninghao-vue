@@ -44,3 +44,27 @@ label {
     transform: scale3d(1, 1, 1);
   }
 }
+
+.v-enter-from {
+  opacity: 0;
+}
+
+.v-enter-active {
+  transition: 0.3s;
+}
+
+.v-enter-to {
+  opacity: 1;
+}
+
+.v-leave-from {
+  opacity: 1;
+}
+
+.v-leave-active {
+  transition: 0.3s;
+}
+
+.v-leave-to {
+  opacity: 0;
+}
