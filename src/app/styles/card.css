@@ -41,3 +41,13 @@
 .card__action > button:active {
   opacity: 0.8;
 }
+
+.card__action > button.active {
+  background: #000;
+  color: #fff;
+}
+
+.status {
+  text-align: center;
+  margin: 24px;
+}
