@@ -17,4 +17,10 @@ label {
 
 .emoji {
   font-size: 80px;
+  transition: 0.5s;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(30px);
 }
