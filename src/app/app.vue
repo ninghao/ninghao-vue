@@ -6,17 +6,20 @@
         <div class="card-subtitle">Transition & Animation</div>
       </div>
       <div class="card__content">
-        <transition
-          name="custom-classes"
-          enter-active-class="animate__animated animate__tada"
-          leave-active-class="animate__animated animate__bounce"
-          mode="out-in"
+        <transition-group
+          name="custom"
+          leave-active-class="animate__animated animate__tada"
         >
-          <component :is="currentEmoji"></component>
-        </transition>
+          <div class="emoji" v-for="emoji in emojiList" :key="emoji">
+            {{ emoji }}
+          </div>
+        </transition-group>
       </div>
       <div class="card__action">
-        <button @click="isActive = !isActive" :class="{ active: isActive }">
+        <button @click="shuffle" :class="{ active: isActive }">
+          请按这里
+        </button>
+        <button @click="pop">
           请按这里
         </button>
       </div>
@@ -28,27 +31,25 @@
 </template>
 
 <script>
-import GhostEmoji from './components/ghost-emoji.vue';
-import RobotEmoji from './components/robot-emoji.vue';
+import _ from 'lodash';
 
 export default {
   data() {
     return {
       name: '宁皓网',
       isActive: true,
-      emoji: 'GhostEmoji',
+      emojiList: ['🌲 ', '🌳 ', '🌴'],
     };
   },
 
-  computed: {
-    currentEmoji() {
-      return this.isActive ? 'GhostEmoji' : 'RobotEmoji';
+  methods: {
+    shuffle() {
+      this.emojiList = _.shuffle(this.emojiList);
     },
-  },
 
-  components: {
-    GhostEmoji,
-    RobotEmoji,
+    pop() {
+      this.emojiList.pop();
+    },
   },
 };
 </script>
