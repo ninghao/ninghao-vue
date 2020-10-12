@@ -10,3 +10,11 @@ select {
 label {
   margin-left: 4px;
 }
+.page {
+  padding: 32px;
+  margin: 32px;
+}
+
+.emoji {
+  font-size: 80px;
+}
