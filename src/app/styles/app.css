@@ -94,3 +94,11 @@ label {
   opacity: 0;
   transform: translateX(30px);
 }
+
+.pulse-enter-active {
+  animation: pulse 1s;
+}
+
+.pulse-leave-active {
+  animation: pulse 1s;
+}
