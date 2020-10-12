@@ -68,3 +68,29 @@ label {
 .v-leave-to {
   opacity: 0;
 }
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-enter-active {
+  transition: 0.3s;
+}
+
+.slide-enter-to {
+  opacity: 1;
+}
+
+.slide-leave-from {
+  opacity: 1;
+}
+
+.slide-leave-active {
+  transition: 0.3s;
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
