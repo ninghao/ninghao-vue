@@ -4,14 +4,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      name: '宁皓网',
-    };
-  },
+  setup() {
+    const name = '宁皓网';
 
-  created() {
-    console.log(this.$data);
+    return {
+      name,
+    };
   },
 };
 </script>
