@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 export default {
   setup() {
@@ -12,6 +12,11 @@ export default {
     const changeName = () => {
       name.value = 'NINGHAO';
     };
+
+    // 生命周期
+    onMounted(() => {
+      console.log('mounted');
+    });
 
     return {
       name,
