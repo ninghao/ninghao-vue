@@ -1,24 +1,21 @@
 <template>
-  <h3 @click="name = 'NINGHAO'">{{ name }}</h3>
-  <div @click="username = 'WANGHAO'">{{ username }}</div>
+  <h3 @click="changeName">{{ name }}</h3>
 </template>
 
 <script>
-import { reactive, ref, toRefs } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
     const name = ref('宁皓网');
 
-    const user = reactive({
-      username: '王皓',
-    });
-
-    // const { username } = toRefs(user);
+    const changeName = () => {
+      name.value = 'NINGHAO';
+    };
 
     return {
       name,
-      ...toRefs(user),
+      changeName,
     };
   },
 };
