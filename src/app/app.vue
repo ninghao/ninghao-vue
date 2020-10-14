@@ -23,7 +23,7 @@ export default {
     try {
       const response = await axios.get('/posts');
 
-      console.log(axios.defaults);
+      // console.log(axios.defaults);
 
       this.posts = response.data;
     } catch (error) {

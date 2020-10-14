@@ -7,7 +7,7 @@ axios.defaults.baseURL = 'http://localhost:3000';
  */
 axios.interceptors.request.use(
   config => {
-    console.log('axios 请求拦截器', config);
+    // console.log('axios 请求拦截器', config);
 
     return config;
   },
@@ -21,7 +21,7 @@ axios.interceptors.request.use(
  */
 axios.interceptors.response.use(
   response => {
-    console.log('axios 响应拦截器', response);
+    // console.log('axios 响应拦截器', response);
 
     return response;
   },
