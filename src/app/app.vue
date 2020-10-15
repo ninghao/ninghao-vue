@@ -8,6 +8,7 @@
       :value="post.title"
       @keyup.enter="updatePost($event, post.id)"
     />
+    <button @click="deletePost(post.id)">删除</button>
     {{ post.title }} -
     <small>{{ post.user.name }}</small>
   </div>
@@ -46,6 +47,20 @@ export default {
   },
 
   methods: {
+    async deletePost(postId) {
+      try {
+        await apiHttpClient.delete(`/posts/${postId}`, {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          },
+        });
+
+        this.getPosts();
+      } catch (error) {
+        this.errorMessage = error.message;
+      }
+    },
+
     async updatePost(event, postId) {
       console.log(event.target.value);
       console.log(postId);
