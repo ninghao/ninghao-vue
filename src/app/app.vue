@@ -56,6 +56,17 @@ export default {
 
   async created() {
     this.getPosts();
+
+    const tid = localStorage.getItem('tid');
+    const uid = localStorage.getItem('uid');
+
+    if (tid) {
+      this.token = tid;
+    }
+
+    if (uid) {
+      this.getCurrentUser(uid);
+    }
   },
 
   methods: {
@@ -72,6 +83,9 @@ export default {
     onLoginSuccess(data) {
       this.token = data.token;
       this.getCurrentUser(data.id);
+
+      localStorage.setItem('tid', data.token);
+      localStorage.setItem('uid', data.id);
     },
 
     onLoginError(error) {
