@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { apiHttpClient } from '@/app/app.service';
+
 export default {
   data() {
     return {
@@ -18,6 +20,17 @@ export default {
   methods: {
     async login() {
       console.log(this.name, this.password);
+
+      try {
+        const response = await apiHttpClient.post('/login', {
+          name: this.name,
+          password: this.password,
+        });
+
+        console.log(response.data);
+      } catch (error) {
+        console.log(error.response);
+      }
     },
   },
 };
