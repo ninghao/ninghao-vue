@@ -22,6 +22,7 @@
 
   <input
     type="file"
+    ref="file"
     @change="onChangeFile"
     accept="image/png, image/jpeg, image/jpg"
   />
@@ -83,6 +84,36 @@ export default {
   },
 
   methods: {
+    async createFile(file, postId) {
+      // 创建表单
+      const formData = new FormData();
+
+      // 添加字段
+      formData.append('file', file);
+
+      // 上传文件
+      try {
+        const response = await apiHttpClient.post(
+          `/files?post=${postId}`,
+          formData,
+          {
+            headers: {
+              Authorization: `Bearer ${this.token}`,
+            },
+          },
+        );
+
+        // 清理
+        this.file = null;
+        this.imagePreviewUrl = null;
+        this.$refs.file.value = '';
+
+        console.log(response.data);
+      } catch (error) {
+        this.errorMessage = error.message;
+      }
+    },
+
     createImagePreview(file) {
       const reader = new FileReader();
 
@@ -201,6 +232,10 @@ export default {
         );
 
         console.log(response.data);
+
+        if (this.file) {
+          this.createFile(this.file, response.data.insertId);
+        }
 
         this.title = '';
 
