@@ -11,3 +11,7 @@ select {
 label {
   margin-left: 4px;
 }
+
+.image-preview {
+  max-width: 360px;
+}
