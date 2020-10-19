@@ -1,5 +1,10 @@
 import { createStore } from 'vuex';
-import { postStoreModule } from '../post/post.store';
+import { postStoreModule, PostStoreState } from '../post/post.store';
+
+export interface RootState {
+  appName: string;
+  post: PostStoreState;
+}
 
 /**
  * 创建 Store
@@ -7,7 +12,7 @@ import { postStoreModule } from '../post/post.store';
 const store = createStore({
   state: {
     appName: '宁皓网',
-  },
+  } as RootState,
 
   modules: {
     post: postStoreModule,
