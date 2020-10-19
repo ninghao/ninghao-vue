@@ -1,6 +1,9 @@
 <template>
   <h3>
-    {{ item.title }} - <small>{{ item.user.name }}</small>
+    <router-link :to="{ name: 'postShow', params: { postId: item.id } }">
+      {{ item.title }}
+    </router-link>
+    - <small>{{ item.user.name }}</small>
   </h3>
 </template>
 
