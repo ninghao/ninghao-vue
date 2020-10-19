@@ -1,22 +1,29 @@
 <template>
+  <div v-if="loading">加载中...</div>
   <PostListItem v-for="post in posts" :item="post" :key="post.id" />
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import { mapGetters, mapActions } from 'vuex';
 import PostListItem from './post-list-item';
-import { apiHttpClient } from '@/app/app.service';
 
 export default defineComponent({
-  data() {
-    return {
-      posts: [],
-    };
+  async created() {
+    this.getPosts();
   },
 
-  async created() {
-    const response = await apiHttpClient.get('/posts');
-    this.posts = response.data;
+  computed: {
+    ...mapGetters({
+      loading: 'post/index/loading',
+      posts: 'post/index/posts',
+    }),
+  },
+
+  methods: {
+    ...mapActions({
+      getPosts: 'post/index/getPosts',
+    }),
   },
 
   components: {
