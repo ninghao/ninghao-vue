@@ -9,6 +9,10 @@ export default {
       name: '宁皓网',
     };
   },
+
+  created() {
+    console.log(this.$store.state);
+  },
 };
 </script>
 
