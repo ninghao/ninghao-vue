@@ -17,6 +17,7 @@ pnpm-debug.log*
 .idea
 .vscode/*
 !.vscode/vue.code-snippets
+!.vscode/settings.json
 *.suo
 *.ntvs*
 *.njsproj
