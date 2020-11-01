@@ -154,7 +154,7 @@
       "",
       "  },",
       "};",
-      "",
+      ""
     ]
   },
   "Vue Store: with loading state": {
@@ -164,8 +164,13 @@
       "import { RootState } from '@/app/app.store';",
       "import { apiHttpClient } from '@/app/app.service';",
       "",
+      "export interface ${6:ResponseData} {",
+      "  data: null;",
+      "}",
+      "",
       "export interface ${1:StoreState} {",
       "  loading: boolean;",
+      "  ${7:responseData}: ${6:ResponseData} | null;",
       "}",
       "",
       "export const ${2:storeModule}: Module<${1:StoreState}, RootState> = {",
@@ -179,6 +184,7 @@
       "   */",
       "  state: {",
       "    loading: false,",
+      "    ${7:responseData}: null,",
       "  } as ${1:StoreState},",
       "",
       "  /**",
@@ -188,6 +194,10 @@
       "    loading(state) {",
       "      return state.loading;",
       "    },",
+      "",
+      "    ${6:responseData}(state) {",
+      "      return state.${7:responseData};",
+      "    },",
       "  },",
       "",
       "  /**",
@@ -196,6 +206,10 @@
       "  mutations: {",
       "    setLoading(state, data) {",
       "      state.loading = data;",
+      "    },",
+      "",
+      "    set${6:ResponseData}(state, data) {",
+      "      state.${7:responseData} = data;",
       "    },",
       "  },",
       "",
@@ -207,8 +221,8 @@
       "      commit('setLoading', true);",
       "",
       "      try {",
-      "        const response = await apiHttpClient.get('${4:apiURL}');",
-      "        commit('setPosts', response.data);",
+      "        const response = await apiHttpClient.${4:get}('${5:apiURL}');",
+      "        commit('set${6:ResponseData}', response.data);",
       "        commit('setLoading', false);",
       "",
       "        return response;",
@@ -217,9 +231,9 @@
       "",
       "        throw error.response;",
       "      }",
-      "    },    ",
+      "    }, ",
       "  },",
-      "};",
+      "};"
     ]
   },
   "Vue Routes": {
@@ -244,7 +258,7 @@
       " * 默认导出",
       " */",
       "export default routes;",
-      "",
+      ""
     ]
   }
 }
