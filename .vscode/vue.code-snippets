@@ -195,7 +195,7 @@
       "      return state.loading;",
       "    },",
       "",
-      "    ${6:responseData}(state) {",
+      "    ${7:responseData}(state) {",
       "      return state.${7:responseData};",
       "    },",
       "  },",
