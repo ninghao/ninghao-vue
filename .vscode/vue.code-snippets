@@ -260,5 +260,21 @@
       "export default routes;",
       ""
     ]
+  },
+  "Vuex: mapGetters": {
+    "prefix": ".mg",
+    "body": ["...mapGetters({", "  $1", "}),"]
+  },
+  "Vuex: mapActions": {
+    "prefix": ".ma",
+    "body": ["...mapActions({", "  $1", "}),"]
+  },
+  "Vuex: mapMutations": {
+    "prefix": ".mm",
+    "body": ["...mapMutations({", "  $1", "}),"]
+  },
+  "Vuex: import": {
+    "prefix": "ivx",
+    "body": ["import {$1} from 'vuex';"]
   }
 }
