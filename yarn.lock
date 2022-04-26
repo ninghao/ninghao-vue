@@ -8524,10 +8524,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
-vue-cli-plugin-nid@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.npmmirror.com/vue-cli-plugin-nid/-/vue-cli-plugin-nid-1.2.7.tgz#80829ed2bfeb93ac41207a3e788098d1d644658d"
-  integrity sha512-FCkvJFxOmACDg8gWJPrWdfsvOsl4ksLVAjGL7drsZ/ZrQUhOFCw0uIeeH16giEgVX6FmvY+9GgHXMESs8qvXnQ==
+vue-cli-plugin-nid@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.npmmirror.com/vue-cli-plugin-nid/-/vue-cli-plugin-nid-1.2.8.tgz#233a77e2964c8876f375df9b53e758fc9e95aa53"
+  integrity sha512-aXSQ+utWbdzHrpd/rucvngcx/AjxNPmWSQ+dEKClqm1xhsN8zdfP/hYWaWqZg7fXeWmHCo7Yj9Zzv0+WPmws8Q==
   dependencies:
     lodash "^4.17.20"
 
